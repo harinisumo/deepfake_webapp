@@ -6,9 +6,9 @@ import os
 import gdown
 
 # --- CONFIG ---
-MODEL_PATH = "efficient_bo_best.keras"   # Local model file
-IMAGE_SIZE = (128, 128)      # Set this to your training input size
-FILE_ID ="1FfqPPnJUlRMmztkQmSp7QA_TW0BTM4Bg"  # Only if downloading model from Google Drive
+MODEL_PATH = "efficient_bo_best.keras"   # Local model filename
+IMAGE_SIZE = (128, 128)                  # Set this to your training input size
+FILE_ID = "1FfqPPnJUlRMmztkQmSp7QA_TW0BTM4Bg"  # Google Drive file ID for the model
 # ---------------
 
 # Download model from Google Drive if not already present
@@ -37,4 +37,5 @@ if uploaded:
     pred = model.predict(img_array)[0][0]
 
     label = "FAKE" if pred > 0.5 else "REAL"
-    st.markdown(f"### Prediction: ✅ **{label}**")
+    emoji = "❌" if label == "FAKE" else "✅"
+    st.markdown(f"### Prediction: {emoji} **{label}** (Confidence: {pred:.2f})")
