@@ -14,7 +14,7 @@ FILE_ID = "1FfqPPnJUlRMmztkQmSp7QA_TW0BTM4Bg"  # Google Drive file ID for the mo
 # Download model from Google Drive if not already present
 if not os.path.exists(MODEL_PATH):
     with st.spinner("Downloading model..."):
-        url = f"https://drive.google.com/uc?id={FILE_ID}"
+        url = "https://drive.google.com/file/d/1FfqPPnJUlRMmztkQmSp7QA_TW0BTM4Bg/view?usp=drive_link"
         gdown.download(url, MODEL_PATH, quiet=False)
 
 # Load model (cached)
@@ -39,3 +39,4 @@ if uploaded:
     label = "FAKE" if pred > 0.5 else "REAL"
     emoji = "❌" if label == "FAKE" else "✅"
     st.markdown(f"### Prediction: {emoji} **{label}** (Confidence: {pred:.2f})")
+
