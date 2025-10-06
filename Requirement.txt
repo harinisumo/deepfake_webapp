@@ -1,0 +1,5 @@
+streamlit       # for the web interface
+tensorflow      # to load and run your deep learning model
+pillow          # for image processing (uploaded images)
+numpy           # for numerical computations
+gdown           # optional, if your model is hosted on Google Drive
