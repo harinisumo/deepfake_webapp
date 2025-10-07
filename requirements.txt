@@ -1,8 +1,11 @@
 streamlit
+pandas
+requests
 tensorflow-cpu==2.14.0
 pillow
 numpy
 opencv-python
 scikit-learn
 gdown
+
 
